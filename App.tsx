@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import Section from './components/Section';
 import Card from './components/Card';
 import Footer from './components/Footer';
-import { sections, solutions, products, akaContent, mhsContent, lieManualContent } from './constants';
+import { sections, solutions, products } from './constants';
 import { BrainCircuit, BookOpen, Rocket, School } from './components/icons';
 
 const App: React.FC = () => {
@@ -41,15 +41,6 @@ const App: React.FC = () => {
           </div>
         </Section>
         
-        <Section id="mhs" title={mhsContent.title} subtitle="Programa de Habilidades Socioemocionais">
-           <div className="bg-slate-800/50 rounded-lg p-8 max-w-4xl mx-auto backdrop-blur-sm border border-slate-700">
-              <p className="text-slate-300 mb-4 leading-relaxed">{mhsContent.p1}</p>
-              <p className="text-slate-300 mb-4 leading-relaxed">{mhsContent.p2}</p>
-              <p className="text-slate-300 mb-4 leading-relaxed">{mhsContent.p3}</p>
-              <p className="text-slate-300 mb-4 leading-relaxed">{mhsContent.p4}</p>
-              <p className="text-slate-300 font-semibold leading-relaxed">{mhsContent.p5}</p>
-           </div>
-        </Section>
         
         <Section id="solutions" title="Nossas Soluções" subtitle="Formatos Flexíveis para seu Desenvolvimento">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -73,11 +64,7 @@ const App: React.FC = () => {
             </div>
         </Section>
         
-        <Section id="aka" title={akaContent.title} subtitle="Nossa Metodologia">
-            <div className="bg-slate-800/50 rounded-lg p-8 max-w-4xl mx-auto backdrop-blur-sm border border-slate-700">
-                <p className="text-slate-300 leading-relaxed">{akaContent.description}</p>
-            </div>
-        </Section>
+        
 
       </main>
       <Footer />

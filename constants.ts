@@ -43,24 +43,16 @@ export const products = [
         description: 'Uma perspectiva inovadora que destaca a emoção como fator central para a ação empreendedora, questionando teorias tradicionais. Baseado em fatos, pesquisas e análises profundas, o livro convida à reflexão sobre a importância da dimensão emocional nos negócios.'
     },
     {
-        title: 'Manual Avançado para Mentirosos',
-        description: 'Um programa exclusivo para terapeutas, psicólogos e profissionais de RH que desejam aprofundar sua compreensão sobre a mentira e seu impacto. Oferece ferramentas para identificar, analisar e manejar esse comportamento em contextos terapêuticos e corporativos.'
+        title: 'EMPRESA DE 1 REAL',
+        description: 'O livro explora o intrigante fenômeno das empresas brasileiras constituídas com um capital social de apenas R$ 1,00. Essas empresas, denominadas E1R, desafiam a lógica tradicional do capitalismo, onde se espera que um capital inicial robusto seja crucial para o sucesso empresarial. O livro apresenta um paradoxo: como podem essas empresas, com um capital social tão baixo, não apenas sobreviver, mas, em alguns casos, prosperar e alcançar um faturamento significativo, empregando um número considerável de funcionários? A obra busca entender as dinâmicas que permitem essa discrepância entre o capital inicial e o sucesso subsequente, questionando se o capital financeiro é o único ou o mais importante indicador de viabilidade empresarial. A obra mergulha na análise de dados de um vasto banco de dados de empresas brasileiras ativas em 2024, revelando a distribuição geográfica das E1R, os setores de atividade em que se concentram e seu impacto econômico. O livro destaca a importância do empreendedorismo, da inovação, da gestão estratégica e da capacidade de adaptar-se às condições de mercado como fatores determinantes para o sucesso dessas empresas, muitas vezes superando a importância do capital social inicial. Além disso, o livro explora o lado emocional do empreendedorismo, a "emoção empreendedora", que abrange as reações e comportamentos dos empreendedores no contexto do mercado para garantir sua sobrevivência. A obra propõe que a compreensão e o gerenciamento dessas emoções, como o medo e o desejo, são fundamentais para o sucesso no "jogo do mercado".'
+    },
+    {
+        title: 'LIVRO DAS BULAS: A NEUROCIÊNCIA DAS EMOÇÕES',
+        description: 'Este não é um manual de psicologia, nem um tratado científico. É uma farmacopéia da alma. O Livro das Bulas transforma as emoções humanas em substâncias vivas — compostos neuroquímicos, simbólicos e poéticos que explicam como sentimos, reagimos e existimos. Cada emoção é descrita como um “medicamento interno”, com composição hormonal, indicações, efeitos colaterais e posologia existencial. Entre dopamina e amor, serotonina e tristeza, oxitocina e compaixão, o livro propõe uma leitura inédita das emoções: a emoção como linguagem biológica e cultural, ponto de encontro entre neurociência, filosofia e literatura. A metáfora farmacológica se torna ferramenta de autoconhecimento — o leitor descobre, em cada bula, um espelho de si mesmo. Na segunda parte, o capítulo Drogadicto apresenta quinze Tipos Ideais, inspirados em Max Weber, que representam os perfis emocionais mais comuns do humano contemporâneo: o Serenador, o Revoltado Sensível, o Odiador Envergonhado, entre outros. Cada um é uma fórmula molecular de afetos — uma síntese entre luz e sombra, equilíbrio e excesso, biologia e destino. O Livro das Bulas convida o leitor a compreender suas emoções como remédios e venenos — forças químicas que tanto podem curar quanto destruir, dependendo da dose e da consciência. Ao atravessar suas páginas, descobre-se que conhecer a si mesmo é, na verdade, aprender a dosar a própria alma.'
     }
 ]
 
-export const akaContent = {
-    title: 'Available Knowledge Approach (AKA)',
-    description: 'O AKA é nossa metodologia inovadora de produção e análise do conhecimento, baseada no acesso global a grandes bases de dados digitais. Utilizando Big Data e IA, mapeamos conceitos, autores e teorias, identificando padrões e tendências. Essa abordagem revoluciona a forma como o conhecimento é produzido, tornando-o mais acessível, atualizado e conectado às transformações tecnológicas contemporâneas.'
-}
-
-export const mhsContent = {
-    title: 'Programa MAPA DE HABILIDADES SOCIOEMOCIONAIS (MHS) – 2025',
-    p1: 'O MHS é uma estratégia inovadora e indispensável para elevar o padrão de adesão, pertencimento, dedicação e empenho dos profissionais. Em um cenário de rápida transformação, a estabilidade emocional é o principal determinante da performance no trabalho.',
-    p2: 'Salários e benefícios já não asseguram, isoladamente, excelência no desempenho. A preponderância dos fatores emocionais tornou-se evidente, expondo a importância e as fragilidades da maturidade emocional de muitos profissionais.',
-    p3: 'Embora o RH possua ferramentas para identificar problemas, ainda são raras as iniciativas que capacitam os colaboradores a desenvolver sua própria maturidade emocional. Essa lacuna é crítica, pois comportamentos imaturos impactam significativamente o ambiente de trabalho.',
-    p4: 'As neurociências demonstram que a consciência emocional e a racionalidade são fundamentais para a eficácia organizacional. A evolução emocional de cada indivíduo dentro da empresa é crucial, pois uma única pessoa em desarmonia pode comprometer a produtividade.',
-    p5: 'O MHS responde a essa necessidade ao oferecer uma estratégia estruturada para promover o crescimento pessoal e profissional. É um caminho para construir ambientes de trabalho mais conscientes, resilientes e orientados para o sucesso coletivo.'
-}
+// AKA removido do site por solicitação
 
 export const lieManualContent = {
     title: 'Manual Avançado para Mentirosos',

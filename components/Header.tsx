@@ -5,10 +5,8 @@ import { Menu, X } from './icons';
 const navLinks = [
   { href: '#about', label: 'Visão' },
   { href: '#pillars', label: 'Pilares' },
-  { href: '#mhs', label: 'MHS' },
   { href: '#solutions', label: 'Soluções' },
   { href: '#products', label: 'Produtos' },
-  { href: '#aka', label: 'AKA' },
 ];
 
 const Header: React.FC = () => {
