@@ -1,43 +1,1232 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MDH - Inovação e Conhecimento</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MDH - Solução Inteligente para a Era da IA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#30e87a",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112218",
+                        "surface-dark": "#1a3324",
+                        "surface-darker": "#0d1a12"
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-      body {
-        font-family: 'Poppins', sans-serif;
-      }
-      .gradient-text {
-        background: linear-gradient(90deg, #38bdf8, #818cf8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+        /* Custom scrollbar hiding for horizontal scroll areas */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-slate-900 text-slate-300">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden">
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/10 bg-background-dark/80 backdrop-blur-md">
+        <div class="flex items-center justify-between px-6 py-4 max-w-[1280px] mx-auto">
+            <div class="flex items-center">
+                <img src="centauro.gif" alt="Centauro Logo" class="h-10 w-auto" />
+            </div>
+            <div class="flex-1 flex items-center justify-center gap-8">
+                <h1 class="text-white text-2xl md:text-4xl font-bold tracking-tight text-center">MDH - A Inteligência Aplicada</h1>
+                <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+                    <a href="#tools" class="hover:text-primary transition-colors">Ferramentas</a>
+                    <a href="#courses" class="hover:text-primary transition-colors">Academia</a>
+                    <a href="#publications" class="hover:text-primary transition-colors">Publicações</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contato</a>
+                </nav>
+            </div>
+            <!-- Mobile Menu Icon -->
+            <button id="mobile-menu-button" class="md:hidden text-white" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="flex items-center">
+                <img src="mdh.gif" alt="MDH Logo" class="h-10 w-auto" />
+            </div>
+        </div>
+    </header>
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="md:hidden fixed inset-x-0 top-[72px] bg-background-dark border-t border-white/10 shadow-2xl shadow-black/30 hidden">
+        <nav class="flex flex-col gap-4 p-6 text-white/90">
+            <a href="#tools" class="hover:text-primary transition-colors">Ferramentas</a>
+            <a href="#courses" class="hover:text-primary transition-colors">Academia</a>
+            <a href="#publications" class="hover:text-primary transition-colors">Publicações</a>
+            <a href="#contact" class="hover:text-primary transition-colors">Contato</a>
+        </nav>
+    </div>
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center min-h-[50vh] px-4 md:px-10 overflow-hidden">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 z-0 opacity-40" role="img" aria-label="Abstract digital mesh network green lines"
+            style="background-image: radial-gradient(circle at center, #1a3324 0%, #112218 70%);"></div>
+        <div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&amp;w=2565&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-10 mix-blend-overlay"
+            role="img" aria-label="Abstract AI neural network pattern"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col gap-8 items-center">
+            <h1
+                class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-white/50">
+                Inteligência Artificial <br /> para a Nova Era
+            </h1>
+            <p class="text-lg md:text-xl text-white/60 max-w-2xl font-light leading-relaxed">
+                Transformando o futuro dos negócios com soluções inovadoras, educação de ponta e insights estratégicos.
+            </p>
+        </div>
+    </section>
+    <!-- Centauro Image Section -->
+    <section class="py-10 bg-background-dark">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <img src="centauro.png" alt="Cartaz Centauro" class="w-[90%] h-auto mx-auto" />
+            <div class="flex justify-center mt-6">
+                <button onclick="openFrameworkModal()" class="px-8 py-3 bg-primary text-background-dark font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+                    Saiba Mais
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Tool Detail Modal -->
+    <div id="tool-modal-backdrop"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"
+        onclick="closeToolModal()"></div>
+    <div id="tool-modal"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[60] hidden opacity-0 scale-95 transition-all duration-300 shadow-2xl">
+        <div class="flex justify-between items-start mb-6">
+            <div>
+                <span id="tool-modal-badge"
+                    class="inline-block px-3 py-1 rounded-full bg-primary text-background-dark text-xs font-bold mb-3">Ferramenta</span>
+                <h2 id="tool-modal-title" class="text-2xl md:text-3xl font-bold text-white">Ferramenta</h2>
+            </div>
+            <button onclick="closeToolModal()" class="text-white/50 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="space-y-4 text-white/80 leading-relaxed">
+            <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <h3 class="text-white font-bold mb-2">O que faz</h3>
+                <p id="tool-modal-what"></p>
+            </div>
+            <div class="bg-primary/10 rounded-xl p-5 border border-primary/30">
+                <h3 class="text-primary font-bold mb-2">Por que importa</h3>
+                <p id="tool-modal-why" class="text-white/90"></p>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+            <a href="#contact" onclick="closeToolModal()"
+                class="px-8 py-3 rounded-full bg-primary text-background-dark font-bold hover:bg-green-400 transition-colors">
+                Falar com a MDH
+            </a>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="frameworkModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-surface-dark rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-surface-dark border-b border-white/10 p-6 flex justify-between items-center">
+                <h2 class="text-2xl font-bold text-white">Framework Centauro</h2>
+                <button onclick="closeModal()" class="text-white/60 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <div class="p-6 md:p-8 text-white/80 space-y-4 leading-relaxed">
+                <h3 class="text-xl font-semibold text-white mb-4">Inteligência Humana na Era da IA</h3>
+                <p>O Framework Centauro é a arquitetura conceitual que organiza o Ecossistema MDH. Ele parte do princípio de que a inteligência artificial não substitui a inteligência humana, mas atua como um sistema de ampliação das capacidades cognitivas, analíticas e decisórias das pessoas e das organizações.</p>
+                <p>Nesse modelo, a relação entre humano e IA é entendida como cooperativa. A IA opera como ferramenta de apoio ao pensamento, à análise de dados, à simulação de cenários e à avaliação de alternativas, enquanto o humano permanece responsável pela interpretação, pela decisão e pela ação. O Framework Centauro estrutura essa cooperação de forma operacional, traduzindo conceitos abstratos em aplicações práticas.</p>
+                <p>O ecossistema é organizado em três eixos integrados. O primeiro eixo é voltado à inteligência pessoal e ao autoconhecimento estratégico, oferecendo instrumentos que auxiliam indivíduos a compreender suas competências, simular decisões e planejar futuros possíveis em contextos mediados por IA. O segundo eixo concentra ferramentas de diagnóstico cognitivo e tomada de decisão crítica, com foco na análise de argumentos, na avaliação de riscos, na deliberação coletiva e na exploração de cenários alternativos. O terceiro eixo é dedicado ao monitoramento informacional e à auditoria de conteúdos, permitindo analisar autenticidade, interrogar documentos complexos e acompanhar a evolução das capacidades dos modelos de IA.</p>
+                <p>Esses três eixos não funcionam de forma isolada. O Framework Centauro foi concebido como um sistema integrado, no qual cada aplicação compartilha princípios metodológicos comuns e pode ser utilizada de maneira combinada, conforme a necessidade do usuário. O resultado é uma infraestrutura cognitiva que apoia decisões mais informadas, análises mais rigorosas e uso aplicado do conhecimento.</p>
+                <p>Ao adotar o Framework Centauro, a MDH propõe uma abordagem estruturada para lidar com a complexidade da era da inteligência artificial, oferecendo ferramentas que fortalecem a autonomia intelectual, a clareza decisional e a capacidade estratégica de indivíduos, equipes e organizações.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openFrameworkModal() {
+            const modal = document.getElementById('frameworkModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('frameworkModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('frameworkModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal();
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- Últimos Lançamentos -->
+    <section class="py-8 bg-background-dark">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <h2 class="text-xl font-bold text-white mb-4">Últimos Lançamentos</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1 max-w-[200px] mx-auto md:max-w-none">
+                    <img src="capa decisao.png" alt="Capa Decisão" class="w-full rounded-lg shadow-md">
+                </div>
+                <div class="flex-1 max-w-[200px] mx-auto md:max-w-none">
+                    <img src="capa zpd.png" alt="Capa ZPD" class="w-full rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Tools Carousel Section -->
+    <section class="py-20 bg-surface-darker border-y border-white/5" id="tools">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">Nossas Ferramentas</h2>
+                    <p class="text-white/60">Soluções proprietárias para acelerar sua produtividade</p>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="p-2 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
+                        onclick="scrollCarousel('tools-carousel', 'left')">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button
+                        class="p-2 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
+                        onclick="scrollCarousel('tools-carousel', 'right')">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div id="tools-carousel" class="flex overflow-x-auto gap-6 pb-8 hide-scrollbar snap-x scroll-smooth">
+                <!-- Tool 1: Eu Futuro -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">psychology</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Eu Futuro</h3>
+                    <p class="text-white/60 text-sm mb-4">Ajuda você a simular decisões importantes da sua vida, como
+                        mudanças de carreira ou planos pessoais.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Eu Futuro"
+                        data-tool-what="Ajuda você a simular decisões importantes da sua vida, como mudanças de carreira ou planos pessoais."
+                        data-tool-why="Permite ver, com apoio da IA, os possíveis caminhos e consequências antes de decidir. Uma forma segura de testar o futuro.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 2: Prever IA -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">trending_up</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Prever IA</h3>
+                    <p class="text-white/60 text-sm mb-4">Permite montar cenários de futuro com base em tendências e
+                        decisões possíveis, tanto para indivíduos quanto para empresas.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Prever IA"
+                        data-tool-what="Permite montar cenários de futuro com base em tendências e decisões possíveis, tanto para indivíduos quanto para empresas."
+                        data-tool-why="Ajuda a planejar com inteligência, antecipando riscos e aproveitando oportunidades.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 3: Competência IA -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Competência IA</h3>
+                    <p class="text-white/60 text-sm mb-4">Avalia seu nível de domínio sobre as habilidades mais
+                        importantes para trabalhar com inteligência artificial.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Competência IA"
+                        data-tool-what="Avalia seu nível de domínio sobre as habilidades mais importantes para trabalhar com inteligência artificial."
+                        data-tool-why="Saber onde você está e o que precisa aprender para lidar bem com IA é essencial hoje.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 4: ComTesta -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">fact_check</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ComTesta</h3>
+                    <p class="text-white/60 text-sm mb-4">Analisa ideias e decisões, mostrando se elas são bem
+                        construídas ou se têm falhas de lógica.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="ComTesta"
+                        data-tool-what="Analisa ideias e decisões, mostrando se elas são bem construídas ou se têm falhas de lógica."
+                        data-tool-why="Evita decisões ruins e melhora a clareza do pensamento.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 5: Custo do Amanhã -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">savings</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Custo do Amanhã</h3>
+                    <p class="text-white/60 text-sm mb-4">Simula o custo de não agir ou de não investir em tecnologia e
+                        inovação hoje.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Custo do Amanhã"
+                        data-tool-what="Simula o custo de não agir ou de não investir em tecnologia e inovação hoje."
+                        data-tool-why="Mostra que o não fazer nada pode sair muito caro.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 6: IA-Conselho -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">groups</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">IA-Conselho</h3>
+                    <p class="text-white/60 text-sm mb-4">Ajuda grupos a tomarem decisões difíceis, oferecendo uma
+                        “visão de fora” com apoio da IA.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="IA-Conselho"
+                        data-tool-what="Ajuda grupos a tomarem decisões difíceis, oferecendo uma visão de fora com apoio da IA."
+                        data-tool-why="Reduz conflitos, organiza opiniões e mostra caminhos viáveis em discussões coletivas.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 7: Decisão Invertida -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">history</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Decisão Invertida</h3>
+                    <p class="text-white/60 text-sm mb-4">Mostra como seriam os resultados se decisões passadas tivessem
+                        sido diferentes. Ferramenta de aprendizado.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Decisão Invertida"
+                        data-tool-what="Mostra como seriam os resultados se decisões passadas tivessem sido diferentes."
+                        data-tool-why="É uma ferramenta poderosa de aprendizado estratégico.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 8: Detecta IA -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">fingerprint</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Detecta IA</h3>
+                    <p class="text-white/60 text-sm mb-4">Diz se um texto foi escrito por um ser humano ou por
+                        inteligência artificial, garantindo mais transparência.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Detecta IA"
+                        data-tool-what="Diz se um texto foi escrito por um ser humano ou por inteligência artificial."
+                        data-tool-why="Garante mais transparência, confiança e ética na comunicação e nos conteúdos.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 9: Agente RAG -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">find_in_page</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Agente RAG</h3>
+                    <p class="text-white/60 text-sm mb-4">Permite fazer perguntas sobre documentos e textos longos,
+                        apontando partes importantes e contradições.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Agente RAG"
+                        data-tool-what="Permite fazer perguntas sobre documentos e textos longos, apontando partes importantes e contradições."
+                        data-tool-why="Economiza tempo na leitura e ajuda a entender documentos complexos com mais clareza.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 10: ZDP-IA -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">compare_arrows</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">ZDP-IA</h3>
+                    <p class="text-white/60 text-sm mb-4">Compara as habilidades humanas com as habilidades das
+                        principais IAs do mundo. Monitoramento de superação.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="ZDP-IA"
+                        data-tool-what="Compara as habilidades humanas com as habilidades das principais IAs do mundo."
+                        data-tool-why="Mostra onde a IA já superou o ser humano — e onde ainda precisamos desenvolver mais.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- Tool 11: Benchmark IA -->
+                <div
+                    class="min-w-[280px] md:min-w-[320px] bg-surface-dark p-6 rounded-2xl border border-white/5 hover:border-primary/50 transition-all group snap-center cursor-pointer">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">leaderboard</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Benchmark IA</h3>
+                    <p class="text-white/60 text-sm mb-4">Ranking dos 100 modelos de IA mais avançados do mundo com base
+                        em testes técnicos rigorosos.</p>
+                    <button type="button"
+                        class="flex items-center text-primary text-sm font-bold mt-auto hover:text-primary/80 transition-colors"
+                        data-tool-title="Benchmark IA"
+                        data-tool-what="Mostra um ranking dos 100 modelos de IA mais avançados do mundo, com base em testes técnicos."
+                        data-tool-why="Permite escolher melhor qual IA usar em um projeto ou empresa.">
+                        Saiba mais <span class="material-symbols-outlined text-base ml-1">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Courses & Lectures Cards Section -->
+    <section class="py-20 px-4 md:px-10 max-w-[1280px] mx-auto" id="courses">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Academia MDH</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1: Liderança Centauro (Palestra) -->
+            <div
+                class="group relative overflow-hidden rounded-[2rem] bg-surface-dark aspect-[3/4] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    role="img" aria-label="Two professionals discussing AI strategy in a modern office"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPyh7yfJFdkxpUYjQg-umDsHTxDSy6cvbzXFeBYMuGZRchLgd6s07OH53cmPQTCSTAxyetRcR3lrbkRikPOo05vFStqpKxyM6mSoUoL_ZcbDcDWzf-UJFpouX1BbjW0qk6RoP5L4ogYerIioXM5wIHc1U-vRTntTSEzvRmpKPBfDcSkOrm_Pl44tDq8BuqLzTQKAsZo6vrf1qBMLrgB6oextuKskVJn12g3b551eiKEcZhCor8kofJ4LRRMIVwkmOKCtxSba3_29U');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90">
+                    </div>
+                </div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-primary text-background-dark text-xs font-bold w-fit mb-3">Palestra</span>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Liderança Centauro</h3>
+                    <p class="text-white/70 text-sm mb-4 line-clamp-3">Navegando o Futuro das Equipes de Trabalho. Como
+                        liderar com sucesso em ambientes híbridos humano-IA.</p>
+                    <button
+                        class="w-full py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="openModal('modal-palestra-lideranca')">Detalhes</button>
+                </div>
+            </div>
+            <!-- Card 2: Estratégia da Pergunta (Oficina) -->
+            <div
+                class="group relative overflow-hidden rounded-[2rem] bg-surface-dark aspect-[3/4] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    role="img" aria-label="Close up of code on a screen with abstract visualization"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5gdC712G5iWJ-fn_IG09WN_r5IsWCh7jPJptrtEPmSRK-eKo-XfeHPRSTqAt0_5VINhDbfF7LsV8xTbmv3zv3igspZB4OLHXYDWrXXet9jFfhO9vODu1D_Ye6zyvoZ3fK6YKkjB5RoShwRf9IWkwuH4_oMUNwyksO43P981EnQvxvNMzKIrW5UCZs586VaXmhxvjy3qNGkl1Hjt61O5Khkqg528upodCf1Ep9CSedAHXjOEdaH0q54Rq8dZqaS0SxrqTwwxqbzfU');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90">
+                    </div>
+                </div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-blue-400 text-background-dark text-xs font-bold w-fit mb-3">Oficina</span>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Estratégia da Pergunta</h3>
+                    <p class="text-white/70 text-sm mb-4 line-clamp-3">Potencializando a Inovação. Aprenda a arte de
+                        formular perguntas estratégicas que transformam organizações.</p>
+                    <button
+                        class="w-full py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="openModal('modal-oficina-estrategia')">Detalhes</button>
+                </div>
+            </div>
+            <!-- Card 3: Ética na IA (Palestra) -->
+            <div
+                class="group relative overflow-hidden rounded-[2rem] bg-surface-dark aspect-[3/4] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    role="img" aria-label="Abstract ethical scales concept digital art"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3q0Uv49ZaTcxqNB6hh_XIlWuGBXEnFvCOPsoTzrIHSmlRpUWAo6RxFb3flI4YVK2E9Y3AsLlULpjfWzS8v_aDGAblZCcUkgAKUw8XeomiV61hXud-NQxET8xqv2gasaQQBq7PnvC1JVa4XG3reO4lRQb8auWt6TqfJXoUNdV1_cCErBtahGMCQWsMDi8q1mk7nASHnJtM6Tq22aOB6y7c2daR8Tc4f_eCSJeKoVqP_pldu6pjqoEk7XDX5BKp41I37iadF7XRB-c');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90">
+                    </div>
+                </div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-purple-400 text-background-dark text-xs font-bold w-fit mb-3">Palestra</span>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Ética e Sustentabilidade</h3>
+                    <p class="text-white/70 text-sm mb-4 line-clamp-3">Reflexão crítica sobre a importância da ética na
+                        implementação e gestão de agentes de Inteligência Artificial.</p>
+                    <button
+                        class="w-full py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="openModal('modal-palestra-etica')">Detalhes</button>
+                </div>
+            </div>
+            <!-- Card 4: Design de Times (Oficina) -->
+            <div
+                class="group relative overflow-hidden rounded-[2rem] bg-surface-dark aspect-[3/4] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    role="img" aria-label="Person typing prompts into a futuristic interface"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8dIHrxSKE9ZnPIXFRgMj7JGRixIkicF80t5WTTYQ3GgRFmbx4fpWOeoUP_EyBb539X_2RaogtTvas5FWFZ_Ggxc6mgLBFEKWmL0Anul1oQnoHs9OE3vlMk6XCz_tfjZd3jZ0LS3eg1H_II0WrjWcxM15AKF7LSG8r6yWqhd7-EE-D1MxxAntXqMz3DSwk6d6vjYFUWJNB38qKFRuvllneDr2-ruunKsnyRr84aN9xTeTv3GOJyTU5ex8CTHfgsgWrmhn6kSt8ODk');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90">
+                    </div>
+                </div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-yellow-400 text-background-dark text-xs font-bold w-fit mb-3">Oficina</span>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Design de Times Centauro</h3>
+                    <p class="text-white/70 text-sm mb-4 line-clamp-3">Workshop prático de integração entre humanos e IA
+                        para maximizar eficiência, criatividade e colaboração.</p>
+                    <button
+                        class="w-full py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="openModal('modal-oficina-times')">Detalhes</button>
+                </div>
+            </div>
+            <!-- Card 5: Liderança Centauro (Mentoria) -->
+            <div
+                class="group relative overflow-hidden rounded-[2rem] bg-surface-dark aspect-[3/4] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    role="img" aria-label="Mentorship session with data visualization background"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBm5zOxhFb-CYyCw02A22bs_sCmboMDxLTyUIbKSb1rahsI_9Q8da0RAdHiH_vk4oYQa0lNakQxYp69f4Ea_fmxbh6LbvmAmD6DF4dht8d0tj5GpRewCRVYfxSAHupCxSD-InyrZQZnPbl2WZOWUNZLdPeZBbOioKsFA9nlBwFqs31gDP2Jf0NWn6lbN2-P6_MxulxSf7kt9mFSl0_fCk_8ly0Q6X7hHmZ1JOt2PiPhEceNwpDYuu5W5LxajBdFoyGxD9Tr1qBTPpI');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90">
+                    </div>
+                </div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-orange-400 text-background-dark text-xs font-bold w-fit mb-3">Mentoria</span>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Mentoria Liderança</h3>
+                    <p class="text-white/70 text-sm mb-4 line-clamp-3">Programa personalizado de 40h para desenvolver
+                        competências de liderança em sistemas híbridos.</p>
+                    <button
+                        class="w-full py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="openModal('modal-mentoria-lideranca')">Detalhes</button>
+                </div>
+            </div>
+            <!-- Card 6: Consultoria (Serviço) -->
+            <div
+                class="group relative overflow-hidden rounded-[2rem] bg-surface-dark aspect-[3/4] hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                    role="img" aria-label="Corporate meeting room with futuristic digital overlays"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFgiA5jwPcuHnbdgEl6LKNSXRxzncGNzmjzsoUtLCGmqf3g_H9ZxgXYIHcwBFqXGkerT1E_eJ6kiasL0PJJsC5LWal9bm6Tkgul2jOqgJgdG0W02gWFM5nGHLALDBPb031fkpInlXcWsrQowIYnxtI6r6gYroMxBIvfo_PgLew1MzyHzAlz8A98P9gDNxzW5T5Y3ebiWIoJTjqxbTbCnTqC7eUgqQx9naTJKkmhTOnhli46Td_McaZz5CkyA3ms_056RPy6Nlgo5Y');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90">
+                    </div>
+                </div>
+                <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-emerald-500 text-background-dark text-xs font-bold w-fit mb-3">Consultoria</span>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Consultoria Centauro</h3>
+                    <p class="text-white/70 text-sm mb-4 line-clamp-3">Transformação organizacional completa:
+                        Diagnóstico, Planejamento e Implementação de Times Híbridos.</p>
+                    <button
+                        class="w-full py-3 rounded-full border border-white/30 text-white font-semibold hover:bg-white hover:text-black transition-colors"
+                        onclick="openModal('modal-consultoria')">Detalhes</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <!-- Video Section -->
+    <section class="py-20 bg-surface-darker">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-10 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-4xl">play_circle</span>
+                Veja a nossa Plataforma de Vídeos especializada em IA
+            </h2>
+            <div class="flex justify-center">
+                <a href="https://mdh-video.netlify.app" target="_blank" rel="noreferrer"
+                    class="px-8 py-4 rounded-lg bg-primary text-background-dark font-bold hover:bg-primary/90 transition-all text-center flex items-center gap-2">
+                    <span class="material-symbols-outlined">play_circle</span>
+                    Acessar Plataforma de Vídeos
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Publications Carousel -->
+    <section class="py-20 bg-background-dark overflow-hidden" id="publications">
+        <div class="max-w-[1280px] mx-auto px-6 mb-10">
+            <div class="flex items-center justify-between">
+                <h2 class="text-3xl font-bold text-white">Publicações Recentes</h2>
+                <div class="flex gap-2">
+                    <button
+                        class="p-2 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
+                        onclick="scrollCarousel('books-carousel', 'left')">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <button
+                        class="p-2 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
+                        onclick="scrollCarousel('books-carousel', 'right')">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="books-carousel" class="flex overflow-x-auto gap-6 px-6 pb-8 hide-scrollbar snap-x max-w-[1280px] mx-auto scroll-smooth">
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Manual Avançado para Mentirosos"
+                        style="background-image: url('CAPAS%20LIVROS/capas%20%20volume%20mentira.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-primary uppercase tracking-wide mb-2">15 de março de 2021</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Manual Avançado para Mentirosos</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Abordagem multidisciplinar sobre a mentira como fenômeno psicológico, social e existencial, introduzindo conceitos como Dispersão Mentirosa e Economia da Mentira.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Filosofia do Prompt"
+                        style="background-image: url('CAPAS%20LIVROS/capas%20%20volume%20prompt.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-blue-400 uppercase tracking-wide mb-2">22 de julho de 2022</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Filosofia do Prompt</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Aborda a arte de formular perguntas eficazes para IA, apresentando o conceito de Time Centauro e princípios éticos que preservam a agência humana.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Sistema Humano de Interrogação"
+                        style="background-image: url('CAPAS%20LIVROS/capas%20%20volume%20shim.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-purple-400 uppercase tracking-wide mb-2">14 de setembro de 2021</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Sistema Humano de Interrogação</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Explora sete perguntas fundamentais do SHIM sobre conhecimento, realidade e consciência, mostrando como emergem em momentos de crise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Estratégia da Pergunta"
+                        style="background-image: url('CAPAS%20LIVROS/capas_volume_ESTRATEGIA.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-amber-300 uppercase tracking-wide mb-2">3 de maio de 2022</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Estratégia da Pergunta</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Framework socrático para aquisição de conhecimento com o Algoritmo do Questionamento em três movimentos e uma régua de avaliação de perguntas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Platão: O Algoritmo da Pergunta"
+                        style="background-image: url('CAPAS%20LIVROS/capa%20platao%20volume.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-emerald-300 uppercase tracking-wide mb-2">2023</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Platão: O Algoritmo da Pergunta</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Mergulho nos diálogos platônicos com 26 perguntas centrais em sete tetralogias, conectando ética e construção dialógica do conhecimento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Emoção Empreendedora"
+                        style="background-image: url('CAPAS%20LIVROS/capas%20%20volume_%20emo%20empreen.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-orange-300 uppercase tracking-wide mb-2">25 de fevereiro de 2025</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Emoção Empreendedora</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Defende que sucesso empresarial depende da inteligência emocional, apresentando o Algoritmo Emocional-Empreendedor e a alegria como emoção exponencial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Empresa de 1 Real"
+                        style="background-image: url('CAPAS%20LIVROS/capas_volume_EMPRESA_1_REAL.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-primary uppercase tracking-wide mb-2">Dezembro de 2024</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Empresa de 1 Real</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Perfil e crescimento das empresas brasileiras criadas com capital social mínimo, trazendo insights sobre empreendedorismo de baixo investimento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Educação Emocionante"
+                        style="background-image: url('CAPAS%20LIVROS/capas%20%20volume%20emocionante.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-pink-300 uppercase tracking-wide mb-2">24 de fevereiro de 2023</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Educação Emocionante</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Mostra a centralidade das emoções na educação do século XXI, integrando neurociência, linguística de corpus e desafios digitais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Educação no Mundo VUCA"
+                        style="background-image: url('CAPAS%20LIVROS/mundo%20vuca.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-blue-300 uppercase tracking-wide mb-2">2019</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Educação no Mundo VUCA</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Reflexão sobre educação em contexto volátil, incerto, complexo e ambíguo, propondo escolas como mercados de troca de conhecimento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Escola em uma Casca de Noz"
+                        style="background-image: url('CAPAS%20LIVROS/casca%20noz.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-yellow-300 uppercase tracking-wide mb-2">2020</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Escola em uma Casca de Noz</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Analisa personagens e elementos da vida escolar, da direção à cantina, propondo uma visão ideal de escola como espaço vivo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-[260px] md:min-w-[300px] snap-center group">
+                <div class="bg-surface-dark rounded-xl overflow-hidden shadow-lg border border-white/5 group-hover:border-primary/30 transition-all h-full flex flex-col">
+                    <div class="h-48 bg-cover bg-center" role="img" aria-label="Capa do livro Livro das Habilidades"
+                        style="background-image: url('CAPAS%20LIVROS/habilidades.png');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <span class="text-xs font-bold text-lime-300 uppercase tracking-wide mb-2">2021</span>
+                        <h3 class="text-xl font-bold text-white mb-3">Livro das Habilidades</h3>
+                        <p class="text-white/60 text-sm mb-6 flex-1">Propõe um programa para mapear e desenvolver nove habilidades socioemocionais, equilibrando maturidade intelectual e emocional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact / Lead Capture Form -->
+    <section class="py-24 relative overflow-hidden" id="contact">
+        <!-- Background decoration -->
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-surface-darker/50 -skew-x-12 z-0 hidden lg:block"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="bg-surface-dark rounded-[2.5rem] p-8 md:p-12 border border-white/5 shadow-2xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Junte-se à Revolução da IA</h2>
+                    <p class="text-white/60 max-w-lg mx-auto">Registre seu interesse em nossas soluções ou envie uma
+                        demanda específica. Nossa equipe especializada entrará em contato.</p>
+                </div>
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-white/80 ml-2">Nome Completo</label>
+                            <input
+                                class="w-full px-6 py-4 rounded-full bg-background-dark border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                placeholder="Seu nome" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-sm font-medium text-white/80 ml-2">Email Corporativo</label>
+                            <input
+                                class="w-full px-6 py-4 rounded-full bg-background-dark border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                placeholder="seu@email.com" type="email" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-medium text-white/80 ml-2">Área de Interesse</label>
+                        <select
+                            class="w-full px-6 py-4 rounded-full bg-background-dark border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
+                            <option>Consultoria Empresarial</option>
+                            <option>Cursos e Treinamentos</option>
+                            <option>Ferramentas de IA</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-sm font-medium text-white/80 ml-2">Sua Demanda</label>
+                        <textarea
+                            class="w-full px-6 py-4 rounded-[2rem] bg-background-dark border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            placeholder="Descreva brevemente como podemos ajudar..." rows="4"></textarea>
+                    </div>
+                    <div class="pt-4">
+                        <button
+                            class="w-full py-4 rounded-full bg-primary text-background-dark font-bold text-lg hover:bg-green-400 transition-all transform active:scale-95 shadow-lg shadow-primary/20"
+                            type="submit">
+                            Enviar Demanda
+                        </button>
+                    </div>
+                    <p id="form-status" class="text-center text-sm text-primary hidden">Recebemos sua demanda. Em breve entraremos em contato.</p>
+                    <p class="text-center text-xs text-white/30 mt-4">Ao enviar, você concorda com nossa Política de
+                        Privacidade.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-surface-darker py-12 border-t border-white/5">
+        <div class="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+                <span class="text-white font-bold text-xl">MDH</span>
+            </div>
+            <div class="flex gap-8 text-sm text-white/60">
+                <a class="hover:text-primary transition-colors" href="#">Termos</a>
+                <a class="hover:text-primary transition-colors" href="#">Privacidade</a>
+                <a class="hover:text-primary transition-colors" href="#">Cookies</a>
+            </div>
+            <div class="text-white/40 text-sm">
+                © 2024 MDH Intelligence. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Modais da Academia MDH -->
+<div id="modal-backdrop"
+    class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] hidden opacity-0 transition-opacity duration-300"
+    onclick="closeAllModals()"></div>
+
+<!-- Template de Modal (Replicado para cada item) -->
+
+<!-- Modal 1: Palestra Liderança -->
+<div id="modal-palestra-lideranca"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[1000] hidden scale-95 transition-all duration-300 opacity-0 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-primary text-background-dark text-xs font-bold mb-3">Palestra</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Liderança Centauro</h2>
+        </div>
+        <button onclick="closeAllModals()" class="text-white/50 hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="space-y-4 overflow-y-auto max-h-[60vh] pr-2 text-white/80 leading-relaxed">
+        <p class="font-bold text-lg text-white">Navegando o Futuro das Equipes de Trabalho</p>
+        <p>Esta palestra aborda como a liderança pode se adaptar e prosperar em um ambiente híbrido que integra humanos
+            e agentes de IA, destacando as competências necessárias para liderar com sucesso essas equipes.</p>
+        <div class="bg-white/5 rounded-xl p-6 mt-6 border border-white/5">
+            <h4 class="text-primary font-bold mb-3 uppercase text-xs tracking-wider">Detalhes Operacionais</h4>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-primary text-base">timer</span> <strong>Carga
+                        Horária:</strong> 2 horas</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-primary text-base">group</span> <strong>Público:</strong>
+                    Líderes, gestores e profissionais.</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-primary text-base">lightbulb</span>
+                    <strong>Metodologia:</strong> Exposição interativa com estudos de caso.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+        <a href="#contact" onclick="closeAllModals()"
+            class="px-8 py-3 rounded-full bg-primary text-background-dark font-bold hover:bg-green-400 transition-colors">
+            Solicitar Proposta
+        </a>
+    </div>
+</div>
+
+<!-- Modal 2: Oficina Estratégia -->
+<div id="modal-oficina-estrategia"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[1000] hidden scale-95 transition-all duration-300 opacity-0 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-blue-400 text-background-dark text-xs font-bold mb-3">Oficina</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Estratégia da Pergunta</h2>
+        </div>
+        <button onclick="closeAllModals()" class="text-white/50 hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="space-y-4 overflow-y-auto max-h-[60vh] pr-2 text-white/80 leading-relaxed">
+        <p class="font-bold text-lg text-white">Potencializando a Inovação através do Questionamento</p>
+        <p>Focada em ensinar a arte de formular perguntas estratégicas que impulsionam a inovação e a resolução de
+            problemas, esta oficina capacita os participantes a transformar suas organizações através do questionamento
+            eficaz (Método Sócrates/Platão).</p>
+        <div class="bg-white/5 rounded-xl p-6 mt-6 border border-white/5">
+            <h4 class="text-blue-400 font-bold mb-3 uppercase text-xs tracking-wider">Detalhes Operacionais</h4>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-blue-400 text-base">timer</span> <strong>Carga
+                        Horária:</strong> 16 horas (2 dias).</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-blue-400 text-base">construction</span>
+                    <strong>Metodologia:</strong> Hands-on, exercícios práticos e design thinking.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+        <a href="#contact" onclick="closeAllModals()"
+            class="px-8 py-3 rounded-full bg-blue-400 text-background-dark font-bold hover:bg-blue-300 transition-colors">
+            Solicitar Proposta
+        </a>
+    </div>
+</div>
+
+<!-- Modal 3: Palestra Ética -->
+<div id="modal-palestra-etica"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[1000] hidden scale-95 transition-all duration-300 opacity-0 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-purple-400 text-background-dark text-xs font-bold mb-3">Palestra</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Ética e Sustentabilidade</h2>
+        </div>
+        <button onclick="closeAllModals()" class="text-white/50 hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="space-y-4 overflow-y-auto max-h-[60vh] pr-2 text-white/80 leading-relaxed">
+        <p class="font-bold text-lg text-white">Sustentabilidade Ética na Gestão de IA</p>
+        <p>Reflete sobre a importância da ética na implementação e gestão de agentes de IA. Discussão sobre viés
+            algorítmico, responsabilidade corporativa e o futuro do trabalho humano em um mundo automatizado.</p>
+        <div class="bg-white/5 rounded-xl p-6 mt-6 border border-white/5">
+            <h4 class="text-purple-400 font-bold mb-3 uppercase text-xs tracking-wider">Detalhes Operacionais</h4>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-purple-400 text-base">timer</span> <strong>Carga
+                        Horária:</strong> 2 horas.</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-purple-400 text-base">balance</span>
+                    <strong>Foco:</strong> Governança, Compliance e ESG.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+        <a href="#contact" onclick="closeAllModals()"
+            class="px-8 py-3 rounded-full bg-purple-400 text-background-dark font-bold hover:bg-purple-300 transition-colors">
+            Solicitar Proposta
+        </a>
+    </div>
+</div>
+
+<!-- Modal 4: Oficina Times -->
+<div id="modal-oficina-times"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[1000] hidden scale-95 transition-all duration-300 opacity-0 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-yellow-400 text-background-dark text-xs font-bold mb-3">Oficina</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Design de Times Centauro</h2>
+        </div>
+        <button onclick="closeAllModals()" class="text-white/50 hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="space-y-4 overflow-y-auto max-h-[60vh] pr-2 text-white/80 leading-relaxed">
+        <p class="font-bold text-lg text-white">Criação de Equipes Híbridas de Alta Performance</p>
+        <p>Workshop prático dedicado ao design e desenvolvimento de equipes híbridas (Humanos + IA). Aprenda a integrar
+            agentes autônomos aos fluxos de trabalho existentes para maximizar eficiência e criatividade.</p>
+        <div class="bg-white/5 rounded-xl p-6 mt-6 border border-white/5">
+            <h4 class="text-yellow-400 font-bold mb-3 uppercase text-xs tracking-wider">Detalhes Operacionais</h4>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-yellow-400 text-base">timer</span> <strong>Carga
+                        Horária:</strong> 16 horas.</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-yellow-400 text-base">engineering</span>
+                    <strong>Foco:</strong> Processos, Ferramentas e Cultura.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+        <a href="#contact" onclick="closeAllModals()"
+            class="px-8 py-3 rounded-full bg-yellow-400 text-background-dark font-bold hover:bg-yellow-300 transition-colors">
+            Solicitar Proposta
+        </a>
+    </div>
+</div>
+
+<!-- Modal 5: Mentoria -->
+<div id="modal-mentoria-lideranca"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[1000] hidden scale-95 transition-all duration-300 opacity-0 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-orange-400 text-background-dark text-xs font-bold mb-3">Mentoria</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Mentoria Liderança</h2>
+        </div>
+        <button onclick="closeAllModals()" class="text-white/50 hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="space-y-4 overflow-y-auto max-h-[60vh] pr-2 text-white/80 leading-relaxed">
+        <p class="font-bold text-lg text-white">Desenvolvendo Líderes para o Futuro</p>
+        <p>Programa exclusivo focado em capacitar líderes a gerenciar e inspirar equipes híbridas. Inclui diagnóstico
+            inicial, planejamento personalizado e acompanhamento contínuo.</p>
+        <div class="bg-white/5 rounded-xl p-6 mt-6 border border-white/5">
+            <h4 class="text-orange-400 font-bold mb-3 uppercase text-xs tracking-wider">Estrutura do Programa</h4>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-orange-400 text-base">timer</span>
+                    <strong>Duração:</strong> 40 horas.
+                </li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-orange-400 text-base">person</span>
+                    <strong>Formato:</strong> Sessões 1:1 personalizadas.
+                </li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-orange-400 text-base">check_circle</span>
+                    <strong>Entregáveis:</strong> Diagnóstico, Plano de Ação, Feedback Contínuo.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+        <a href="#contact" onclick="closeAllModals()"
+            class="px-8 py-3 rounded-full bg-orange-400 text-background-dark font-bold hover:bg-orange-300 transition-colors">
+            Aplicar para Mentoria
+        </a>
+    </div>
+</div>
+
+<!-- Modal 6: Consultoria -->
+<div id="modal-consultoria"
+    class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-dark border border-white/10 rounded-3xl p-8 z-[1000] hidden scale-95 transition-all duration-300 opacity-0 shadow-2xl">
+    <div class="flex justify-between items-start mb-6">
+        <div>
+            <span
+                class="inline-block px-3 py-1 rounded-full bg-emerald-500 text-background-dark text-xs font-bold mb-3">Consultoria</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Consultoria Centauro</h2>
+        </div>
+        <button onclick="closeAllModals()" class="text-white/50 hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+    <div class="space-y-4 overflow-y-auto max-h-[60vh] pr-2 text-white/80 leading-relaxed">
+        <p class="font-bold text-lg text-white">Transformação Estratégica com Times Centauro</p>
+        <p>Consultoria completa para organizações que buscam integrar IA em suas operações. Do diagnóstico cultural e
+            tecnológico até a implementação de times híbridos e governança de IA.</p>
+        <div class="bg-white/5 rounded-xl p-6 mt-6 border border-white/5">
+            <h4 class="text-emerald-500 font-bold mb-3 uppercase text-xs tracking-wider">Etapas do Processo</h4>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-emerald-500 text-base">search</span> <strong>1.
+                        Diagnóstico:</strong> Entrevistas e análise de processos.</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-emerald-500 text-base">map</span> <strong>2.
+                        Planejamento:</strong> Definição de roadmap de transformação.</li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-emerald-500 text-base">rocket_launch</span> <strong>3.
+                        Implementação:</strong> Formação de times e setup tecnológico.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-white/10 flex justify-end">
+        <a href="#contact" onclick="closeAllModals()"
+            class="px-8 py-3 rounded-full bg-emerald-500 text-background-dark font-bold hover:bg-emerald-400 transition-colors">
+            Agendar Diagnóstico
+        </a>
+    </div>
+</div>
+
+<script>
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        const backdrop = document.getElementById('modal-backdrop');
+
+        if (modal && backdrop) {
+            backdrop.classList.remove('hidden');
+            modal.classList.remove('hidden');
+
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                modal.classList.remove('opacity-0', 'scale-95');
+            }, 10);
+
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    }
+
+    function closeToolModal() {
+        const backdrop = document.getElementById('tool-modal-backdrop');
+        const modal = document.getElementById('tool-modal');
+        if (!backdrop || !modal) return;
+
+        backdrop.classList.add('opacity-0');
+        modal.classList.add('opacity-0', 'scale-95');
+
+        setTimeout(() => {
+            backdrop.classList.add('hidden');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 250);
+    }
+
+    function openToolModal({ title, what, why }) {
+        const backdrop = document.getElementById('tool-modal-backdrop');
+        const modal = document.getElementById('tool-modal');
+        const titleEl = document.getElementById('tool-modal-title');
+        const whatEl = document.getElementById('tool-modal-what');
+        const whyEl = document.getElementById('tool-modal-why');
+
+        if (!backdrop || !modal || !titleEl || !whatEl || !whyEl) return;
+
+        titleEl.textContent = title;
+        whatEl.textContent = what;
+        whyEl.textContent = why;
+
+        backdrop.classList.remove('hidden', 'opacity-0');
+        modal.classList.remove('hidden');
+
+        // allow transition
+        requestAnimationFrame(() => {
+            modal.classList.remove('opacity-0', 'scale-95');
+        });
+
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeAllModals() {
+        const backdrop = document.getElementById('modal-backdrop');
+        const modals = document.querySelectorAll('[id^="modal-"]');
+
+        backdrop.classList.add('opacity-0');
+        modals.forEach(modal => {
+            if (modal.id !== 'modal-backdrop') {
+                modal.classList.add('opacity-0', 'scale-95');
+            }
+        });
+
+        setTimeout(() => {
+            backdrop.classList.add('hidden');
+            modals.forEach(modal => {
+                if (modal.id !== 'modal-backdrop') {
+                    modal.classList.add('hidden');
+                }
+            });
+            document.body.style.overflow = ''; // Restore background scrolling
+        }, 300);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeAllModals();
+            closeToolModal();
+        }
+    });
+
+    // Carousel Logic
+    function scrollCarousel(elementId, direction) {
+        const container = document.getElementById(elementId);
+        if (!container) return;
+
+        const scrollAmount = 340; // Card width + gap loosely
+        const currentScroll = container.scrollLeft;
+        const targetScroll = direction === 'right'
+            ? currentScroll + scrollAmount
+            : currentScroll - scrollAmount;
+
+        container.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        if (contactForm && formStatus) {
+            contactForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                formStatus.classList.remove('hidden');
+                contactForm.reset();
+            });
+        }
+
+        const toolButtons = document.querySelectorAll('[data-tool-title]');
+        if (toolButtons.length) {
+            toolButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    openToolModal({
+                        title: button.dataset.toolTitle || '',
+                        what: button.dataset.toolWhat || '',
+                        why: button.dataset.toolWhy || ''
+                    });
+                });
+            });
+        }
+
+        const toolBackdrop = document.getElementById('tool-modal-backdrop');
+        if (toolBackdrop) {
+            toolBackdrop.addEventListener('click', (event) => {
+                if (event.target === toolBackdrop) {
+                    closeToolModal();
+                }
+            });
+        }
+    });
+</script>
+
 </html>

@@ -1,0 +1,161 @@
+<svg viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a100a;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#0f1f14;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#142b1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1a10;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a8d5ba;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4af37;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="line1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0" />
+    </linearGradient>
+    
+    <radialGradient id="glow1" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#2d8c5a;stop-opacity:0.12" />
+      <stop offset="70%" style="stop-color:#2d8c5a;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="1200" fill="url(#bgGrad)"/>
+  
+  <!-- Background glows -->
+  <ellipse cx="700" cy="200" rx="250" ry="250" fill="url(#glow1)" filter="url(#blur)"/>
+  <ellipse cx="100" cy="900" rx="200" ry="200" fill="#d4af37" opacity="0.06" filter="url(#blur)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2d8c5a" stroke-width="0.5" opacity="0.04"/>
+  </pattern>
+  <rect width="800" height="1200" fill="url(#grid)"/>
+  
+  <!-- Header line decorations -->
+  <line x1="280" y1="70" x2="320" y2="70" stroke="#d4af37" stroke-width="2"/>
+  <line x1="480" y1="70" x2="520" y2="70" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Framework label -->
+  <text x="400" y="75" font-family="monospace" font-size="10" fill="#d4af37" text-anchor="middle" letter-spacing="4">FRAMEWORK CENTAURO</text>
+  
+  <!-- Main title -->
+  <text x="400" y="140" font-family="serif" font-size="52" font-weight="300" fill="url(#titleGrad)" text-anchor="middle">Ecossistema MDH</text>
+  
+  <!-- Subtitle -->
+  <text x="400" y="175" font-family="serif" font-size="20" font-style="italic" fill="#6db88a" text-anchor="middle">Inteligência Humana na Era da IA</text>
+  
+  <!-- Introduction box -->
+  <rect x="80" y="210" width="640" height="100" fill="#ffffff" fill-opacity="0.02" stroke="#d4af37" stroke-opacity="0.15" rx="2"/>
+  <line x1="120" y1="210" x2="680" y2="210" stroke="url(#line1)" stroke-width="2"/>
+  
+  <text x="400" y="250" font-family="serif" font-size="15" fill="#c4d8cc" text-anchor="middle">
+    <tspan x="400" dy="0">O Ecossistema MDH integra inteligência artificial</tspan>
+    <tspan x="400" dy="20">e cognição humana por meio de aplicações digitais</tspan>
+    <tspan x="400" dy="20">voltadas à análise, decisão e desenvolvimento estratégico.</tspan>
+  </text>
+  
+  <!-- Section title -->
+  <text x="400" y="360" font-family="monospace" font-size="11" fill="#5a8a6a" text-anchor="middle" letter-spacing="6">TRÊS EIXOS, UM SISTEMA INTEGRADO</text>
+  
+  <!-- Three pillars -->
+  <!-- Pillar 1 -->
+  <rect x="60" y="390" width="220" height="180" fill="#0f1f14" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.06" rx="2"/>
+  <rect x="60" y="390" width="3" height="180" fill="#2d8c5a" rx="2"/>
+  <text x="75" y="410" font-family="monospace" font-size="9" fill="#2d8c5a" letter-spacing="2">01</text>
+  <text x="75" y="435" font-family="serif" font-size="14" font-weight="500" fill="#ffffff">
+    <tspan x="75">Autoconhecimento</tspan>
+    <tspan x="75" dy="16">e Inteligência</tspan>
+    <tspan x="75" dy="16">Pessoal</tspan>
+  </text>
+  <text x="75" y="505" font-family="serif" font-size="11.5" fill="#8a9f8f">
+    <tspan x="75">Ferramentas para</tspan>
+    <tspan x="75" dy="14">simular decisões,</tspan>
+    <tspan x="75" dy="14">planejar futuros e</tspan>
+    <tspan x="75" dy="14">avaliar competências</tspan>
+    <tspan x="75" dy="14">frente à IA.</tspan>
+  </text>
+  
+  <!-- Pillar 2 -->
+  <rect x="290" y="390" width="220" height="180" fill="#0f1f14" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.06" rx="2"/>
+  <rect x="290" y="390" width="3" height="180" fill="#d4af37" rx="2"/>
+  <text x="305" y="410" font-family="monospace" font-size="9" fill="#d4af37" letter-spacing="2">02</text>
+  <text x="305" y="435" font-family="serif" font-size="14" font-weight="500" fill="#ffffff">
+    <tspan x="305">Diagnóstico</tspan>
+    <tspan x="305" dy="16">Cognitivo e</tspan>
+    <tspan x="305" dy="16">Decisão Crítica</tspan>
+  </text>
+  <text x="305" y="505" font-family="serif" font-size="11.5" fill="#8a9f8f">
+    <tspan x="305">Aplicações para</tspan>
+    <tspan x="305" dy="14">análise de argumentos,</tspan>
+    <tspan x="305" dy="14">avaliação de riscos e</tspan>
+    <tspan x="305" dy="14">exploração de cenários</tspan>
+    <tspan x="305" dy="14">alternativos.</tspan>
+  </text>
+  
+  <!-- Pillar 3 -->
+  <rect x="520" y="390" width="220" height="180" fill="#0f1f14" fill-opacity="0.6" stroke="#ffffff" stroke-opacity="0.06" rx="2"/>
+  <rect x="520" y="390" width="3" height="180" fill="#4aa87a" rx="2"/>
+  <text x="535" y="410" font-family="monospace" font-size="9" fill="#4aa87a" letter-spacing="2">03</text>
+  <text x="535" y="435" font-family="serif" font-size="14" font-weight="500" fill="#ffffff">
+    <tspan x="535">Auditoria</tspan>
+    <tspan x="535" dy="16">Informacional e</tspan>
+    <tspan x="535" dy="16">Monitoramento</tspan>
+  </text>
+  <text x="535" y="505" font-family="serif" font-size="11.5" fill="#8a9f8f">
+    <tspan x="535">Análise de</tspan>
+    <tspan x="535" dy="14">autenticidade,</tspan>
+    <tspan x="535" dy="14">comparação de</tspan>
+    <tspan x="535" dy="14">modelos e monitora-</tspan>
+    <tspan x="535" dy="14">mento humano-IA.</tspan>
+  </text>
+  
+  <!-- Deliverables boxes -->
+  <!-- Left box -->
+  <rect x="60" y="610" width="330" height="200" fill="#2d8c5a" fill-opacity="0.12" stroke="#2d8c5a" stroke-opacity="0.2" rx="2"/>
+  <text x="75" y="640" font-family="monospace" font-size="10" fill="#3da86a" letter-spacing="3">O QUE O ECOSSISTEMA ENTREGA</text>
+  
+  <circle cx="85" cy="675" r="3" fill="#2d8c5a"/>
+  <text x="100" y="679" font-family="serif" font-size="13" fill="#c4d8cc">Apoio estruturado à tomada de decisão</text>
+  
+  <circle cx="85" cy="705" r="3" fill="#2d8c5a"/>
+  <text x="100" y="709" font-family="serif" font-size="13" fill="#c4d8cc">Análise crítica aplicada</text>
+  
+  <circle cx="85" cy="735" r="3" fill="#2d8c5a"/>
+  <text x="100" y="739" font-family="serif" font-size="13" fill="#c4d8cc">Planejamento prospectivo</text>
+  
+  <circle cx="85" cy="765" r="3" fill="#2d8c5a"/>
+  <text x="100" y="769" font-family="serif" font-size="13" fill="#c4d8cc">Uso estratégico da inteligência artificial</text>
+  
+  <!-- Right box -->
+  <rect x="410" y="610" width="330" height="200" fill="#d4af37" fill-opacity="0.08" stroke="#d4af37" stroke-opacity="0.15" rx="2"/>
+  <text x="425" y="640" font-family="monospace" font-size="10" fill="#d4af37" letter-spacing="3">FRAMEWORK CENTAURO</text>
+  
+  <text x="575" y="710" font-family="serif" font-size="14" font-style="italic" fill="#e8e6e3" text-anchor="middle">
+    <tspan x="575">"IA como instrumento de</tspan>
+    <tspan x="575" dy="22">ampliação da autonomia</tspan>
+    <tspan x="575" dy="22">intelectual, da clareza</tspan>
+    <tspan x="575" dy="22">decisional e da inteligência</tspan>
+    <tspan x="575" dy="22">aplicada."</tspan>
+  </text>
+  
+  <!-- Footer -->
+  <line x1="100" y1="870" x2="700" y2="870" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  
+  <!-- Centaur symbol -->
+  <circle cx="350" cy="920" r="15" stroke="#d4af37" stroke-opacity="0.3" fill="none"/>
+  <circle cx="350" cy="920" r="10" stroke="#2d8c5a" stroke-opacity="0.5" fill="none"/>
+  <circle cx="350" cy="920" r="4" fill="#d4af37" opacity="0.8"/>
+  
+  <text x="380" y="925" font-family="monospace" font-size="10" fill="#5a8a6a" letter-spacing="2">HUMANO + IA</text>
+</svg>

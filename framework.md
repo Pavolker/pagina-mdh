@@ -1,0 +1,11 @@
+Framework Centauro — Inteligência Humana na Era da IA
+
+O Framework Centauro é a arquitetura conceitual que organiza o Ecossistema MDH. Ele parte do princípio de que a inteligência artificial não substitui a inteligência humana, mas atua como um sistema de ampliação das capacidades cognitivas, analíticas e decisórias das pessoas e das organizações.
+
+Nesse modelo, a relação entre humano e IA é entendida como cooperativa. A IA opera como ferramenta de apoio ao pensamento, à análise de dados, à simulação de cenários e à avaliação de alternativas, enquanto o humano permanece responsável pela interpretação, pela decisão e pela ação. O Framework Centauro estrutura essa cooperação de forma operacional, traduzindo conceitos abstratos em aplicações práticas.
+
+O ecossistema é organizado em três eixos integrados. O primeiro eixo é voltado à inteligência pessoal e ao autoconhecimento estratégico, oferecendo instrumentos que auxiliam indivíduos a compreender suas competências, simular decisões e planejar futuros possíveis em contextos mediados por IA. O segundo eixo concentra ferramentas de diagnóstico cognitivo e tomada de decisão crítica, com foco na análise de argumentos, na avaliação de riscos, na deliberação coletiva e na exploração de cenários alternativos. O terceiro eixo é dedicado ao monitoramento informacional e à auditoria de conteúdos, permitindo analisar autenticidade, interrogar documentos complexos e acompanhar a evolução das capacidades dos modelos de IA.
+
+Esses três eixos não funcionam de forma isolada. O Framework Centauro foi concebido como um sistema integrado, no qual cada aplicação compartilha princípios metodológicos comuns e pode ser utilizada de maneira combinada, conforme a necessidade do usuário. O resultado é uma infraestrutura cognitiva que apoia decisões mais informadas, análises mais rigorosas e uso aplicado do conhecimento.
+
+Ao adotar o Framework Centauro, a MDH propõe uma abordagem estruturada para lidar com a complexidade da era da inteligência artificial, oferecendo ferramentas que fortalecem a autonomia intelectual, a clareza decisional e a capacidade estratégica de indivíduos, equipes e organizações.
