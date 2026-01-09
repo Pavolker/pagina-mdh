@@ -1195,6 +1195,13 @@
             });
         }
 
+        /* 
+           REMOVIDO: Interceptação do formulário para permitir envio nativo ao Netlify.
+           O Netlify cuidará do redirecionamento ou da exibição de sucesso padrão.
+           Se quiser personalizar a mensagem sem recarregar (AJAX), seria necessário um script diferente.
+           Mas para a configuração padrão "sem JS", isso deve ser removido.
+        */
+        /*
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
         if (contactForm && formStatus) {
@@ -1204,6 +1211,7 @@
                 contactForm.reset();
             });
         }
+        */
 
         const toolButtons = document.querySelectorAll('[data-tool-title]');
         if (toolButtons.length) {
@@ -1227,6 +1235,9 @@
             });
         }
     });
+</script>
+
+</html>
 </script>
 
 </html>
