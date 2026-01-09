@@ -1195,23 +1195,53 @@
             });
         }
 
-        /* 
-           REMOVIDO: Interceptação do formulário para permitir envio nativo ao Netlify.
-           O Netlify cuidará do redirecionamento ou da exibição de sucesso padrão.
-           Se quiser personalizar a mensagem sem recarregar (AJAX), seria necessário um script diferente.
-           Mas para a configuração padrão "sem JS", isso deve ser removido.
-        */
-        /*
+        /* Lógica de envio do formulário via Netlify Functions (Postgres) */
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
+        
         if (contactForm && formStatus) {
-            contactForm.addEventListener('submit', (event) => {
+            contactForm.addEventListener('submit', async (event) => {
                 event.preventDefault();
-                formStatus.classList.remove('hidden');
-                contactForm.reset();
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerText;
+                
+                // Feedback visual de carregamento
+                submitButton.disabled = true;
+                submitButton.innerText = "Enviando...";
+                formStatus.classList.add('hidden');
+
+                // Converte FormData para objeto JSON simples
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+                
+                try {
+                    const response = await fetch("/.netlify/functions/submit-lead", {
+                        method: "POST",
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        formStatus.classList.remove('hidden');
+                        formStatus.className = "text-center text-sm text-primary mt-4 font-bold";
+                        formStatus.innerHTML = '<span class="material-symbols-outlined align-middle mr-1">check_circle</span> Mensagem enviada com sucesso!';
+                        contactForm.reset();
+                    } else {
+                        const errorData = await response.json();
+                        throw new Error(errorData.message || 'Houve um erro ao enviar.');
+                    }
+                } catch (error) {
+                    formStatus.classList.remove('hidden');
+                    formStatus.className = "text-center text-sm text-red-400 mt-4 font-bold";
+                    formStatus.innerHTML = '<span class="material-symbols-outlined align-middle mr-1">error</span> Erro ao enviar: ' + error.message;
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.innerText = originalButtonText;
+                }
             });
         }
-        */
 
         const toolButtons = document.querySelectorAll('[data-tool-title]');
         if (toolButtons.length) {
